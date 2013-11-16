@@ -1,0 +1,12 @@
+#body {
+	background: #000;
+}
+#main {
+	width:600px;
+	height:600px;
+	border-radius:300px;
+	font-size:20px;
+	color:#000;
+	text-align:center;
+	background:#bbb
+}
