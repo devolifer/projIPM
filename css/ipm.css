@@ -1,0 +1,130 @@
+#body {
+	background: #000;
+}
+#screen {
+	text-decoration: none;
+}
+#initial-message {
+	margin-top: 500px;
+	margin-left: 150px;
+	color: white;
+}
+#navigation-row {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+#navigation {
+	border-radius:50px;
+	background-color: #aaa;
+}
+#inside-navigation {
+	margin: 25px;
+}
+.btn-group-exit {
+	float: right;
+}
+.btn-group-help {
+	float:right;
+}
+#main {
+	height: 500px;
+	border-radius:50px;
+	background-color: #aaa;
+}
+#inside-main {
+	margin: 25px;
+}
+#inside-main .h1 {
+	text-align: center;
+}
+#inside-main .h2 {
+	font-size: 18px;
+	position: relative;
+	left: 20px;
+	margin-bottom: 10px;
+}
+#menu-btn-group {
+	margin: 20px 40px;
+}
+#menu-btn-group .btn {
+	margin-top: 20px;
+	marign-bottom: 20px;
+}
+#notifications {
+	height: 500px;
+	border-radius:50px;
+	background-color: #aaa;
+}
+#inside-notifications {
+	text-align: center;
+	margin: 25px;
+}
+.h1 {
+	font-size: 30px;
+}
+.h1 i {
+	position: relative;
+	top: 10px;
+}
+.h2 {
+	font-size: 18px;
+}
+#inside-notifications .h2 {
+	margin-bottom: 20px;
+}
+#music-container {
+	margin-left: 50px;
+	margin-right: 50px;
+}
+.btn-music {
+	margin-bottom: 20px;
+}
+.selection-list {
+	width: 579px;
+	height: 150px;
+	overflow: auto;
+}
+
+#music-img {
+	width: 350px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+#bebidas-container {
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.btn-group-bebida {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.btn-compra {
+	height: 21px;
+}
+
+#icon-euro {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-top: 1px;
+}
+
+#actividades-container {
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.btn-group-actividade {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#beer-img {
+	width: 200px;
+	display: block;
+	margin-top: 20px;
+}

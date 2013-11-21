@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon"   href="">
+
+		<title>BARISTA</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="../css/bootstrap.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<style type="text/css">
+			body {
+				background: #000000;
+				padding-top: 30px;
+			}
+			.navbar {
+				background-color: #999999;
+				border-color: #000000;
+			}
+			.jumbotron {
+				background-color: #999999
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<div class="container">
+			<div class="header">
+				<nav class="navbar navbar-default nav-tabs-justified  col-md-9" role="navigation">
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li class="btn-primary">
+								<a href="Menu.html">Menu</a>
+							</li>
+							<li class="active">
+								<a>Conta de utilizador</a>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li class="btn-info ">
+								<a>Ajuda</a>
+							</li>
+							<li class="btn-danger">
+								<a href="../index.html">Sair</a>
+							</li>
+						</ul>
+					</div><!-- /.navbar-collapse -->
+				</nav>
+			</div>
+
+			<div class="row row-offcanvas row-offcanvas-right">
+
+				<div class="col-xs-12 col-sm-9">
+					<p class="pull-right visible-xs">
+						<button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">
+							Algo correu mal...
+						</button>
+					</p>
+					<div class="jumbotron">
+						<div class="panel-group" id="accordion">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 align="center" class="panel-title "><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> Ver os meus detalhes </a></h4>
+								</div>
+								<div align="center" id="collapseOne" class="panel-collapse collapse">
+									<div class="panel-body col-md-4">
+										COMIDA
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 align="center" class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"> Opções </a></h4>
+								</div>
+								<div align="center" id="collapseTwo" class="panel-collapse collapse">
+									<div class="panel-body col-md-4">
+										Cerveja
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div><!--/span-->
+
+				<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+					<button type="button" class="btn collapse" id="ve" data-toggle="collapse" data-target="#esconde, #ve">
+						Ver notificações »»
+					</button>
+
+					<div class="list-group collapse in" id="esconde">
+						<button type="button" class="btn collapse in" id="esconve" data-toggle="collapse" data-target="#ve, #esconde">
+							Esconder Notificações ««
+						</button>
+						<a href="#" class="list-group-item">Tester</a>
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+			<hr>
+
+		</div><!--/.container-->
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- "borrowed" script
+		================================================== -->
+
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="../js/jquery-1.js"></script>
+		<script src="../js/bootstrap.js"></script>
+		<script src="../css/offcanvas.css"></script>
+
+	</body>
+</html>
