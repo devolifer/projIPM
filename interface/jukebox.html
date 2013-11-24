@@ -25,10 +25,10 @@
 				border-color: #000000;
 			}
 			.jumbotron {
-				background-color: #999999
+				background-color: #999999;
 			}
 			.scrollmenu {
-				max-height: 150px;
+				max-height: 300px;
 				overflow-y: scroll;
 			}
 			.navegador {
@@ -38,7 +38,7 @@
 
 	</head>
 
-	<body>
+	<body onload="checkCookie()">
 
 		<div class="container">
 			<div class="header">
@@ -74,41 +74,32 @@
 						</button>
 					</p>
 					<div class="jumbotron">
-						<div class="row">
-							<div class="thumbnail col-sm-6">
+						<div align="center" class="row">
 								<img src="../img/dj-hero.jpg" alt="imagem fugiu">
 								<h4 align="center">A tocar:</h4>
 								<h5 align="center"><i>Dj hero</i></h5>
-							</div>
-
-							<ul class="panel nav col-sm-4 navbar-right">
-								<h4 align="center">Lista de músicas:</h4>
-								<ul class="scrollmenu">
-									<a href="../index.html">musica2 </a>
-									<a href="../index.html">musica3</a>
-									<a href="../index.html">musica4</a>
-									<a href="../index.html">musica5</a>
-								</ul>
-							</ul>
+								<button onclick="ativaMplayer()" type="button" class="btn col-sm-12 btn-lg" id="togglerMP">
+									acompanhar música
+								</button>
 						</div>
 					</div>
 				</div><!--/span-->
 
 				<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-					<button type="button" class="btn collapse" id="ve" data-toggle="collapse" data-target="#esconde, #ve">
-						Ver notificações »»
+					<button onclick="toggleBotao()" type="button" class="btn collapse in" id="botaoNOTBAR">
+						Esconder Notificações ««
 					</button>
-
-					<div class="list-group collapse in" id="esconde">
-						<button type="button" class="btn collapse in" id="esconve" data-toggle="collapse" data-target="#ve, #esconde">
-							Esconder Notificações ««
-						</button>
-						<a href="#" class="list-group-item">Tester</a>
+					<div class="list-group collapse" id="esconde">
+						<a href="#" id="debugger" class="list-group-item">Tester</a>
+						<a href="#" id="mplayer" class="list-group-item hide">A tocar: <i>Dj Hero</i></a>
+						<a href="#" id="comida" class="list-group-item hide">1x Hamburguer</a>
+						<a href="#" id="bebida" class="list-group-item hide">2x Imperiais</a>
+						<a href="#" id="fila" class="list-group-item hide">2x pessoas à frente
+						<br />
+						para: <i>bilhar</i></a>
 					</div>
 				</div><!--/span-->
 			</div><!--/row-->
-
-			<hr>
 
 		</div><!--/.container-->
 
@@ -116,7 +107,10 @@
 		================================================== -->
 		<!-- "borrowed" script
 		================================================== -->
+		<!-- own script
+		================================================== -->
 
+		<script src="../js/backupCode.js"></script>
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="../js/jquery-1.js"></script>
 		<script src="../js/bootstrap.js"></script>

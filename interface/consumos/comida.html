@@ -28,7 +28,10 @@
 				background-color: #999999
 			}
 			.scrollmenu {
-				max-height: 150px;
+				height: 150px;
+				background-color: #999999; 
+				max-height : 200px;
+				font-size: 10px;
 				overflow-y: scroll;
 			}
 			.selecprod {
@@ -38,7 +41,7 @@
 		<!-- scroll menu diferente do usado em jukebox -->
 	</head>
 
-	<body>
+	<body onload="checkCookie()">
 
 		<div class="container">
 			<div class="header">
@@ -79,43 +82,74 @@
 					<div class="jumbotron">
 						<div class="panel-group">
 							<div class="panel panel-heading">
-								<div class="thumbnail col-sm-5">
+								<div class="thumbnail col-sm-4">
 									<img align="center" src="../../img/hamburger.png" alt="imagem fugiu">
 									<h5 align="center">Hamburguer</h5>
 								</div>
-								<ul class="panel nav col-sm-7 navbar-right">
-									<div class="panel-heading">
-										<table width="1000">
-											<tr>
-												<td align="left">Designação</td>
-												<td align="right">Custo</td>
-											</tr>
-										</table>
+								<ul class="panel nav col-sm-8 ">
+									<div class="panel-heading col-sm-5">
+												Designação/Custo
 									</div>
-									<ul class="scrollmenu">
-										<table width="1000">
-											<tr class="selecprod">
-												<td align="left">mcdonalds</td>
-												<td align="right" >1.00€</td>
-											</tr>
-											<tr>
-												<td align="left">mcdonalds</td>
-												<td align="right" >1.00€</td>
-											</tr>
-											<tr>
-												<td align="left">mcdonalds</td>
-												<td align="right" >1.00€</td>
-											</tr>
-											<tr>
-												<td align="left">mcdonalds</td>
-												<td align="right" >1.00€</td>
-											</tr>
-										</table>
+									<ul class=" navbar-left col-sm-8  scrollmenu">
+										<div class="dropdown open">
+											<ul class="dropdown-menu col-sm-12">
+												<li>
+													<a style="background-color: blue;" href="">
+														<tr>
+															<td align="left">hamburguer</td>
+															<td align="right" >1.00€</td>
+														</tr>
+													</a>
+												</li>
+												<li>
+													<a href="">
+														<tr>
+															<td align="left">outra sandes</td>
+															<td align="right" >1.80€</td>
+														</tr>
+													</a>
+												</li>
+												<li>
+													<a href="">
+														<tr>
+															<td align="left">outra sandes</td>
+															<td align="right" >1.80€</td>
+														</tr>
+													</a>
+												</li>
+												<li>
+													<a href="">
+														<tr>
+															<td align="left">outra sandes</td>
+															<td align="right" >1.80€</td>
+														</tr>
+													</a>
+												</li>
+												<li>
+													<a href="">
+														<tr>
+															<td align="left">outra sandes</td>
+															<td align="right" >1.80€</td>
+														</tr>
+													</a>
+												</li>
+											</ul>
+										</div>
 									</ul>
+									<div align="center" class="panel col-sm-4 navbar-right">
+										<button onclick="document.getElementById('quantitativo').innerHTML = '2';" class="col-sm-12  btn-success btn-lg"  type="button">
+											+1
+										</button>
+										<label id="quantitativo" onclick="" class="col-sm-12  disabled label label-info" >1</label>
+										<button onclick="document.getElementById('quantitativo').innerHTML = '1';" class="col-md-12  btn-danger btn-lg"  type="button">
+											-1
+										</button>
+									</div>
 								</ul>
+
 							</div>
 							<div class="panel">
-								<button class="col-md-6 small alert-success"  type="button">
+								<button onclick="ativaBebida()" class="col-md-6 small alert-success"  type="button">
 									Pagar na entrega
 								</button>
 								<button class="col-md-6 small alert-warning" type="button">
@@ -129,20 +163,20 @@
 				</div><!--/span-->
 
 				<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-					<button type="button" class="btn collapse" id="ve" data-toggle="collapse" data-target="#esconde, #ve">
-						Ver notificações »»
+					<button onclick="toggleBotao()" type="button" class="btn collapse in" id="botaoNOTBAR">
+						Esconder Notificações ««
 					</button>
-
-					<div class="list-group collapse in" id="esconde">
-						<button type="button" class="btn collapse in" id="esconve" data-toggle="collapse" data-target="#ve, #esconde">
-							Esconder Notificações ««
-						</button>
-						<a href="#" class="list-group-item">Tester</a>
+					<div class="list-group collapse" id="esconde">
+						<a href="#" id="debugger" class="list-group-item">Tester</a>
+						<a href="#" id="mplayer" class="list-group-item hide">A tocar: <i>Dj Hero</i></a>
+						<a href="#" id="comida" class="list-group-item hide">1x Hamburguer</a>
+						<a href="#" id="bebida" class="list-group-item hide">2x Imperiais</a>
+						<a href="#" id="fila" class="list-group-item hide">2x pessoas à frente
+						<br />
+						para: <i>bilhar</i></a>
 					</div>
 				</div><!--/span-->
 			</div><!--/row-->
-
-			<hr>
 
 		</div><!--/.container-->
 
@@ -151,6 +185,10 @@
 		<!-- "borrowed" script
 		================================================== -->
 
+		<!-- own script
+		================================================== -->
+
+		<script src="../../js/backupCode.js"></script>
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="../../js/jquery-1.js"></script>
 		<script src="../../js/bootstrap.js"></script>

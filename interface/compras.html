@@ -35,7 +35,7 @@
 
 	</head>
 
-	<body>
+	<body onload="checkCookie()">
 
 		<div class="container">
 			<div class="header">
@@ -73,96 +73,95 @@
 					<div class="jumbotron">
 						<div class="row">
 							<ul class="panel nav panel-default">
-								
+
 								<div  class="panel">
 									<div class="panel-heading">
 										<table width="1000">
-										<tr>
-											<td align="center" width="250">Género</td>
-											<td align="center" width="250">Designação</td>
-											<td align="center" width="250">Estado actual</td>
-											<td align="center" width="250">Custo</td>
-										</tr>
+											<tr>
+												<td align="center" width="250">Género</td>
+												<td align="center" width="250">Designação</td>
+												<td align="center" width="250">Estado actual</td>
+												<td align="center" width="250">Custo</td>
+											</tr>
 										</table>
-										</div>
-								<ul class="scrollmenu">
-									<table width="1000" >
-										<tr>
-											<td width="250">bebida</td>
-											<td width="250">imperial sagres</td>
-											<td width="250">pago</td>
-											<td width="250">1,00€</td>
-										</tr>
-										<tr>
-											<td width="250">serviço</td>
-											<td width="250">space invaders</td>
-											<td width="250">não pago</td>
-											<td width="250">0,50€</td>
-										</tr>
-										<tr>
-											<td width="250">comida</td>
-											<td width="250">sandes</td>
-											<td width="250">a ser preparado</td>
-											<td width="250">1,00€</td>
-										</tr>
-										<tr>
-											<td width="250">bebida</td>
-											<td width="250">imperial sagres</td>
-											<td width="250">pago</td>
-											<td width="250">1,00€</td>
-										</tr>
-										<tr>
-											<td width="250">serviço</td>
-											<td width="250">space invaders</td>
-											<td width="250">não pago</td>
-											<td width="250">0,50€</td>
-										</tr>
-										<tr>
-											<td width="250">comida</td>
-											<td width="250">sandes</td>
-											<td width="250">a ser preparado</td>
-											<td width="250">1,00€</td>
-										</tr><tr>
-											<td width="250">bebida</td>
-											<td width="250">imperial sagres</td>
-											<td width="250">pago</td>
-											<td width="250">1,00€</td>
-										</tr>
-										<tr>
-											<td width="250">serviço</td>
-											<td width="250">space invaders</td>
-											<td width="250">não pago</td>
-											<td width="250">0,50€</td>
-										</tr>
-										<tr>
-											<td width="250">comida</td>
-											<td width="250">sandes</td>
-											<td width="250">a ser preparado</td>
-											<td width="250">1,00€</td>
-										</tr>
-									</table>
-								</ul>
-							</div>
+									</div>
+									<ul class="scrollmenu">
+										<table width="1000" >
+											<tr>
+												<td width="250">bebida</td>
+												<td width="250">imperial sagres</td>
+												<td width="250">pago</td>
+												<td width="250">1,00€</td>
+											</tr>
+											<tr>
+												<td width="250">serviço</td>
+												<td width="250">space invaders</td>
+												<td width="250">não pago</td>
+												<td width="250">0,50€</td>
+											</tr>
+											<tr>
+												<td width="250">comida</td>
+												<td width="250">sandes</td>
+												<td width="250">a ser preparado</td>
+												<td width="250">1,00€</td>
+											</tr>
+											<tr>
+												<td width="250">bebida</td>
+												<td width="250">imperial sagres</td>
+												<td width="250">pago</td>
+												<td width="250">1,00€</td>
+											</tr>
+											<tr>
+												<td width="250">serviço</td>
+												<td width="250">space invaders</td>
+												<td width="250">não pago</td>
+												<td width="250">0,50€</td>
+											</tr>
+											<tr>
+												<td width="250">comida</td>
+												<td width="250">sandes</td>
+												<td width="250">a ser preparado</td>
+												<td width="250">1,00€</td>
+											</tr>
+											<tr>
+												<td width="250">bebida</td>
+												<td width="250">imperial sagres</td>
+												<td width="250">pago</td>
+												<td width="250">1,00€</td>
+											</tr>
+											<tr>
+												<td width="250">serviço</td>
+												<td width="250">space invaders</td>
+												<td width="250">não pago</td>
+												<td width="250">0,50€</td>
+											</tr>
+											<tr>
+												<td width="250">comida</td>
+												<td width="250">sandes</td>
+												<td width="250">a ser preparado</td>
+												<td width="250">1,00€</td>
+											</tr>
+										</table>
+									</ul>
+								</div>
 							</ul>
 						</div>
 					</div>
 				</div><!--/span-->
 
 				<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-					<button type="button" class="btn collapse" id="ve" data-toggle="collapse" data-target="#esconde, #ve">
-						Ver notificações »»
+					<button onclick="toggleBotao()" type="button" class="btn collapse in" id="botaoNOTBAR">
+						Esconder Notificações ««
 					</button>
-
-					<div class="list-group collapse in" id="esconde">
-						<button type="button" class="btn collapse in" id="esconve" data-toggle="collapse" data-target="#ve, #esconde">
-							Esconder Notificações ««
-						</button>
-						<a href="#" class="list-group-item">Tester</a>
+					<div class="list-group collapse" id="esconde">
+						<a href="#" id="debugger" class="list-group-item">Tester</a>
+						<a href="#" id="mplayer" class="list-group-item hide">A tocar: <i>Dj Hero</i></a>
+						<a href="#" id="comida" class="list-group-item hide">1x Hamburguer</a>
+						<a href="#" id="bebida" class="list-group-item hide">2x Imperiais</a>
+						<a href="#" id="fila" class="list-group-item hide">2x pessoas à frente<br />para: <i>bilhar</i></a>
 					</div>
 				</div><!--/span-->
 			</div><!--/row-->
-
-			<hr>
 
 		</div><!--/.container-->
 
@@ -170,7 +169,10 @@
 		================================================== -->
 		<!-- "borrowed" script
 		================================================== -->
+		<!-- own script
+		================================================== -->
 
+		<script src="../js/backupCode.js"></script>
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="../js/jquery-1.js"></script>
 		<script src="../js/bootstrap.js"></script>

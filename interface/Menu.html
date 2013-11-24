@@ -31,7 +31,7 @@
 
 	</head>
 
-	<body>
+	<body onload="checkCookie()">
 
 		<div class="container">
 			<div class="header">
@@ -63,7 +63,7 @@
 							Algo correu mal...
 						</button>
 					</p>
-					<div class="jumbotron">
+					<div class="jumbotron" >
 						<div align="center"  class="list-group">
 							<a href="consumo.html" class="list-group-item">Consumir</a>
 							<a href="cantos.html" class="list-group-item">Lugares</a>
@@ -75,21 +75,18 @@
 				</div><!--/span-->
 
 				<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-					<span class="badge">1</span>
-					<button type="button" class="btn collapse" id="ve" data-toggle="collapse" data-target="#esconde, #ve">
-						Ver notificações »»
+					<button onmousedown="toggleBotao()" type="button" class="btn collapse in" id="botaoNOTBAR" >
+						checker nao funca
 					</button>
-
-					<div class="list-group collapse in" id="esconde">
-						<button type="button" class="btn collapse in" id="esconve" data-toggle="collapse" data-target="#ve, #esconde">
-							Esconder Notificações ««
-						</button>
-						<a href="#" class="list-group-item">Tester</a>
+					<div class="list-group collapse" id="esconde">
+						<a href="#" id="debugger" class="list-group-item">Tester</a>
+						<a href="#" id="mplayer" class="list-group-item hide">A tocar: <i>Dj Hero</i></a>
+						<a href="#" id="comida" class="list-group-item hide">1x Hamburguer</a>
+						<a href="#" id="bebida" class="list-group-item hide">2x Imperiais</a>
+						<a href="#" id="fila" class="list-group-item hide">2x pessoas à frente<br />para: <i>bilhar</i></a>
 					</div>
 				</div><!--/span-->
 			</div><!--/row-->
-
-			<hr>
 
 		</div><!--/.container-->
 
@@ -97,7 +94,10 @@
 		================================================== -->
 		<!-- "borrowed" script
 		================================================== -->
+		<!-- own script
+		================================================== -->
 
+		<script src="../js/backupCode.js"></script>
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="../js/jquery-1.js"></script>
 		<script src="../js/bootstrap.js"></script>
