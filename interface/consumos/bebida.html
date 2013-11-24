@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon"   href="">
+
+		<title>BARISTA</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="../../css/bootstrap.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<style type="text/css">
+			body {
+				background: #000000;
+				padding-top: 30px;
+			}
+			.navbar {
+				background-color: #999999;
+				border-color: #000000;
+			}
+			.jumbotron {
+				background-color: #999999
+			}
+			.scrollmenu {
+				height: 150px;
+				background-color: #999999;
+				 max-height : 200px;
+				font-size: 10px;
+				overflow-y: scroll;
+			}
+			.selecprod {
+				background: #555555;
+			}
+		</style>
+		<!-- scroll menu diferente do usado em jukebox -->
+	</head>
+
+	<body onload="checkCookie()">
+
+		<div class="container">
+			<div class="header">
+				<nav class="navbar navbar-default nav-tabs-justified  col-md-9" role="navigation">
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li class="btn-primary">
+								<a href="../Menu.html">Menu</a>
+							</li>
+							<li class="btn-primary">
+								<a href="../consumo.html">Consumo</a>
+							</li>
+							<li class="active">
+								<a>BEBIDA</a>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li class="btn-info ">
+								<a>Ajuda</a>
+							</li>
+							<li class="btn-danger">
+								<a href="../../index.html">Sair</a>
+							</li>
+						</ul>
+					</div><!-- /.navbar-collapse -->
+				</nav>
+			</div>
+
+			<div class="row row-offcanvas row-offcanvas-right">
+
+				<div class="col-xs-12 col-sm-9">
+					<p class="pull-right visible-xs">
+						<button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">
+							Algo correu mal...
+						</button>
+					</p>
+					<div class="jumbotron">
+						<div class="panel-group">
+							<div class="panel panel-heading">
+								<div class="thumbnail col-sm-4">
+									<img align="center" src="../../img/beer.jpg" alt="imagem fugiu">
+									<h5 align="center">Cerveja</h5>
+								</div>
+								<ul class="panel nav col-sm-8 ">
+									<div class="panel-heading col-sm-5">
+												Designação/Custo
+									</div>
+									<ul class=" navbar-left col-sm-8  scrollmenu">
+										<div class="dropdown open">
+											<ul class="dropdown-menu col-sm-12">
+												<li>
+													<a style="background-color: blue;" href="">
+														<tr>
+															<td align="left">0,33cl Sagres</td>
+															<td align="right" >1.00€</td>
+														</tr>
+													</a>
+												</li>
+												<li>
+													<a href="">
+														<tr>
+															<td align="left">imperial outra</td>
+															<td align="right" >1.80€</td>
+														</tr>
+													</a>
+												</li>
+												<li>
+													<a href="">
+														<tr>
+															<td align="left">imperial outra</td>
+															<td align="right" >1.80€</td>
+														</tr>
+													</a>
+												</li>
+												<li>
+													<a href="">
+														<tr>
+															<td align="left">imperial outra</td>
+															<td align="right" >1.80€</td>
+														</tr>
+													</a>
+												</li>
+												<li>
+													<a href="">
+														<tr>
+															<td align="left">imperial outra</td>
+															<td align="right" >1.80€</td>
+														</tr>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</ul>
+									<div align="center" class="panel col-sm-4 navbar-right">
+										<button onclick="document.getElementById('quantitativo').innerHTML = '2';" class="col-sm-12  btn-success btn-lg"  type="button">
+											+1
+										</button>
+										<label id="quantitativo" onclick="" class="col-sm-12  disabled label label-info" >1</label>
+										<button onclick="document.getElementById('quantitativo').innerHTML = '1';" class="col-md-12  btn-danger btn-lg"  type="button">
+											-1
+										</button>
+									</div>
+								</ul>
+
+							</div>
+							<div class="panel">
+								<button onclick="ativaBebida()" class="col-md-6 small alert-success"  type="button">
+									Pagar na entrega
+								</button>
+								<button class="col-md-6 small alert-warning" type="button">
+									Pagar mais tarde
+								</button>
+							</div>
+
+						</div>
+
+					</div>
+				</div><!--/span-->
+
+				<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+					<button onclick="toggleBotao()" type="button" class="btn collapse in" id="botaoNOTBAR">
+						Esconder Notificações ««
+					</button>
+					<div class="list-group collapse" id="esconde">
+						<a href="#" id="debugger" class="list-group-item">Tester</a>
+						<a href="#" id="mplayer" class="list-group-item hide">A tocar: <i>Dj Hero</i></a>
+						<a href="#" id="comida" class="list-group-item hide">1x Hamburguer</a>
+						<a href="#" id="bebida" class="list-group-item hide">2x Imperiais</a>
+						<a href="#" id="fila" class="list-group-item hide">2x pessoas à frente
+						<br />
+						para: <i>bilhar</i></a>
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div><!--/.container-->
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- "borrowed" script
+		================================================== -->
+
+		<!-- own script
+		================================================== -->
+
+		<script src="../../js/backupCode.js"></script>
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="../../js/jquery-1.js"></script>
+		<script src="../../js/bootstrap.js"></script>
+		<script src="../../css/offcanvas.css"></script>
+
+	</body>
+</html>
