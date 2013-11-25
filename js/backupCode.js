@@ -33,15 +33,21 @@ function resetCookie() {
 	createCookie('SBstatus', 'on', 1);
 }
 
+/////
+
 ////////
 function checkCookie() {
-	var theCookie = readCookie('SBstatus');
+	var SBcookie = readCookie('SBstatus');
+	var FOODcookie = readCookie('FOODstatus');
+	var ROWcookie = readCookie('ROWstatus');
+	var MPcookie = readCookie('MUSICstatus');
+	var DRINKcookie = readCookie('DRINKstatus');
 
-	if (theCookie != null && theCookie != "" && theCookie == 'off') {
+	if (SBcookie != null && SBcookie != "" && SBcookie == 'off') {
 		document.getElementById("botaoNOTBAR").innerHTML = "Ver notificações »»";
 		document.getElementById("esconde").setAttribute("class", "list-group collapse");
 		document.getElementById("debugger").innerHTML = "off!";
-	} else if (theCookie != null && theCookie != "" && theCookie == 'on') {
+	} else if (SBcookie != null && SBcookie != "" && SBcookie == 'on') {
 		document.getElementById("botaoNOTBAR").innerHTML = "Esconder notificações ««";
 		document.getElementById("esconde").setAttribute("class", "list-group collapse in");
 		document.getElementById("debugger").innerHTML = "on!";
@@ -49,35 +55,53 @@ function checkCookie() {
 		document.getElementById("debugger").innerHTML = "wut!";
 	}
 
-	theCookie = readCookie('FOODstatus');
-	if (theCookie != null && theCookie != "" && theCookie == 'off') {
+	if (FOODcookie != null && FOODcookie != "" && FOODcookie == 'off') {
 		document.getElementById("comida").setAttribute("class", "list-group-item hide");
 		document.getElementById("debugger").innerHTML = "esconder comida";
-	} else if (theCookie != null && theCookie != "" && theCookie == 'on') {
+	} else if (FOODcookie != null && FOODcookie != "" && FOODcookie == 'on') {
 		document.getElementById("comida").setAttribute("class", "list-group-item");
 		document.getElementById("debugger").innerHTML = "mostro comida";
 	} else {
 		document.getElementById("debugger").innerHTML = "n faço nada";
 	}
 
-	theCookie = readCookie('DRINKstatus');
-	if (theCookie != null && theCookie != "" && theCookie == 'off') {
+	if (DRINKcookie != null && DRINKcookie != "" && DRINKcookie == 'off') {
 		document.getElementById("bebida").setAttribute("class", "list-group-item hide");
 		document.getElementById("debugger").innerHTML = "esconder bebida";
-	} else if (theCookie != null && theCookie != "" && theCookie == 'on') {
+	} else if (DRINKcookie != null && DRINKcookie != "" && DRINKcookie == 'on') {
 		document.getElementById("bebida").setAttribute("class", "list-group-item");
 		document.getElementById("debugger").innerHTML = "mostro bebida";
 	} else {
 		document.getElementById("debugger").innerHTML = "n faço nada";
 	}
 
-	theCookie = readCookie('MUSICstatus');
-	if (theCookie != null && theCookie != "" && theCookie == 'off') {
+	if (ROWcookie != null && ROWcookie != "" && ROWcookie == 'off') {
+		document.getElementById("fila").setAttribute("class", "list-group-item hide");
+		document.getElementById("debugger").innerHTML = "esconder fila";
+	} else if (ROWcookie != null && ROWcookie != "" && ROWcookie == 'on') {
+		document.getElementById("fila").setAttribute("class", "list-group-item");
+		document.getElementById("debugger").innerHTML = "mostro fila";
+	} else {
+		document.getElementById("debugger").innerHTML = "n faço nada";
+	}
+
+	if (ROWcookie != null && ROWcookie != "" && ROWcookie == 'off') {
+		document.getElementById("togglerROW").setAttribute("class", "btn col-sm-12 btn-lg btn-warning");
+		document.getElementById("togglerROW").innerHTML = "entrar na fila para jogar";
+	} else if (ROWcookie != null && ROWcookie != "" && ROWcookie == 'on') {
+		document.getElementById("togglerROW").setAttribute("class", "btn col-sm-12 btn-lg btn-success");
+		document.getElementById("togglerROW").innerHTML = "sair da fila";
+	} else {
+		document.getElementById("debugger").innerHTML = "n faço nada";
+	}
+
+	if (MPcookie != null && MPcookie != "" && MPcookie == 'off') {
+
 		document.getElementById("mplayer").setAttribute("class", "list-group-item hide");
 		document.getElementById("togglerMP").setAttribute("class", "btn col-sm-12 btn-lg btn-info");
 		document.getElementById("debugger").innerHTML = "esconder mplayer";
 		document.getElementById("togglerMP").innerHTML = "Acompanhar música";
-	} else if (theCookie != null && theCookie != "" && theCookie == 'on') {
+	} else if (MPcookie != null && MPcookie != "" && MPcookie == 'on') {
 		document.getElementById("mplayer").setAttribute("class", "list-group-item");
 		document.getElementById("togglerMP").setAttribute("class", "btn col-sm-12 btn-lg btn-success");
 		document.getElementById("debugger").innerHTML = "mostro mplayer";
@@ -86,16 +110,6 @@ function checkCookie() {
 		document.getElementById("debugger").innerHTML = "n faço nada";
 	}
 
-	theCookie = readCookie('ROWstatus');
-	if (theCookie != null && theCookie != "" && theCookie == 'off') {
-		document.getElementById("fila").setAttribute("class", "list-group-item hide");
-		document.getElementById("debugger").innerHTML = "esconder fila";
-	} else if (theCookie != null && theCookie != "" && theCookie == 'on') {
-		document.getElementById("fila").setAttribute("class", "list-group-item");
-		document.getElementById("debugger").innerHTML = "mostro fila";
-	} else {
-		document.getElementById("debugger").innerHTML = "n faço nada";
-	}
 }
 
 ////////
@@ -184,7 +198,7 @@ function ativaFila() {
 
 	if (theCookie != null && theCookie != "" && theCookie == 'on') {
 		document.getElementById("debugger").innerHTML = "carregado duas vezes";
-		alert();
+		createCookie('ROWstatus', 'off', 1);
 	} else if (theCookie != null && theCookie != "" && theCookie == 'off') {
 		document.getElementById("debugger").innerHTML = "ele estava off";
 		createCookie('ROWstatus', 'on', 1);
