@@ -38,7 +38,7 @@
 				<nav class="navbar navbar-default nav-tabs-justified col-md-9" role="navigation">
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav">
+						<ul id="topo" class="nav navbar-nav">
 							<li class="active">
 								<a href="Menu.html">Menu</a>
 							</li>
@@ -63,13 +63,13 @@
 							Algo correu mal...
 						</button>
 					</p>
-					<div class="jumbotron" >
+					<div id="jumbo" class="jumbotron" >
 						<div align="center"  class="list-group">
-							<a href="consumo.html" class="list-group-item">Consumir</a>
-							<a href="cantos.html" class="list-group-item">Lugares</a>
-							<a href="jukebox.html" class="list-group-item">Música</a>
-							<a href="compras.html" class="list-group-item">Ver consumo</a>
-							<a href="user.html" class="list-group-item">Ver detalhes</a>
+							<a onclick="menuConsumo()" class="list-group-item">Consumir</a>
+							<a onclick="menuMapa()" class="list-group-item">Lugares</a>
+							<a onclick="menuMusica()" class="list-group-item">Música</a>
+							<a onclick="menuCompra()" class="list-group-item">Ver consumo</a>
+							<a onclick="menuUser()" class="list-group-item">Ver detalhes</a>
 						</div>
 					</div>
 				</div><!--/span-->
@@ -83,7 +83,9 @@
 						<a href="#" id="mplayer" class="list-group-item hide">A tocar: <i>Dj Hero</i></a>
 						<a href="#" id="comida" class="list-group-item hide">1x Hamburguer</a>
 						<a href="#" id="bebida" class="list-group-item hide">2x Imperiais</a>
-						<a href="#" id="fila" class="list-group-item hide">2x pessoas à frente<br />para: <i>bilhar</i></a>
+						<a href="#" id="fila" class="list-group-item hide">2x pessoas à frente
+						<br />
+						para: <i>bilhar</i></a>
 					</div>
 				</div><!--/span-->
 			</div><!--/row-->
@@ -96,8 +98,10 @@
 		================================================== -->
 		<!-- own script
 		================================================== -->
+		<script src="../js/fetchCode.js"></script>
 
 		<script src="../js/backupCode.js"></script>
+		
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="../js/jquery-1.js"></script>
 		<script src="../js/bootstrap.js"></script>
